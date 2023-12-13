@@ -1,4 +1,8 @@
 package com.alibou.security.utils;
+
+import lombok.Getter;
+
+@Getter
 public enum HttpStatusCode {
 
     //1xx: Informational
@@ -72,8 +76,8 @@ public enum HttpStatusCode {
     NOT_EXTENDED(510, "Not Extended"),
     NETWORK_AUTHENTICATION_REQUIRED(511, "Network Authentication Required");
 
-    private final int value;
-    private final String description;
+    private int value;
+    private String description;
 
     HttpStatusCode(int value, String description) {
         this.value = value;

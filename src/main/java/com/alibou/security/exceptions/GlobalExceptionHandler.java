@@ -51,6 +51,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 //        return new ExceptionResponse(ex.getMessage(),  403);
 //    }
 
+    /*
     @ExceptionHandler(value = {UsernameNotFoundException.class})
     public ResponseEntity<Object> handleExpiredJwtException(UsernameNotFoundException ex, WebRequest request) {
         String requestUri = ((ServletWebRequest) request).getRequest().getRequestURI().toString();
@@ -79,4 +80,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         ExceptionResponse exceptionMessage = new ExceptionResponse(ex.getMessage(), requestUri);
         return new ResponseEntity<>(exceptionMessage, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+     */
 }

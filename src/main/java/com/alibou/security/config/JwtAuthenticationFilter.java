@@ -80,7 +80,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
             filterChain.doFilter(request, response);
         } catch (ExpiredJwtException | SignatureException | AccessDeniedException | MalformedJwtException | UnsupportedJwtException | IllegalArgumentException e) {
-            System.out.println(e.getMessage());
             exceptionResolver.resolveException(request,response,null,e);
         }
 

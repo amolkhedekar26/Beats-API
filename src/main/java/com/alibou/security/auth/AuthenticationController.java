@@ -2,6 +2,7 @@ package com.alibou.security.auth;
 
 import com.alibou.security.payload.GenericResponse;
 import com.alibou.security.payload.response.LoginDto;
+import com.alibou.security.payload.response.ResponseMessage;
 import com.alibou.security.user.UserResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -32,7 +33,7 @@ public class AuthenticationController {
   public ResponseEntity<GenericResponse<LoginDto>> authenticate(
       @RequestBody AuthenticationRequest request
   ) throws IOException {
-    return ResponseEntity.ok(GenericResponse.success(service.authenticate(request),"User logged in succesfully", 200));
+    return ResponseEntity.ok(GenericResponse.success(service.authenticate(request),new ResponseMessage("LOGIN_SUCCESS","User logged in succesfully"), 200,"Ok"));
   }
 
   @PostMapping("/refresh-token")
