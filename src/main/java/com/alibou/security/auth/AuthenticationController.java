@@ -33,7 +33,7 @@ public class AuthenticationController {
   public ResponseEntity<GenericResponse<LoginDto>> authenticate(
       @RequestBody AuthenticationRequest request
   ) throws IOException {
-    return ResponseEntity.ok(GenericResponse.success(service.authenticate(request),new ResponseMessage("LOGIN_SUCCESS","User logged in succesfully"), 200,"Ok"));
+    return ResponseEntity.ok(GenericResponse.success(service.authenticate(request),new ResponseMessage("LOGIN_SUCCESS","Login success"), 200,"Ok"));
   }
 
   @PostMapping("/refresh-token")
